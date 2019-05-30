@@ -1,26 +1,43 @@
 import React from 'react';
-import logo from './logo.svg';
+import Header from './Components/Header';
+import ListHomeCards from './Components/ListHomeCards';
+import API from './API/Spotaroom';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const title = 'spotaroom';
 
-export default App;
+export default class App extends React.Component {
+
+  constructor() {
+    super();
+    this.state = {
+      listHomeCards: []
+    };
+  }
+
+  componentDidMount() {
+    try {
+      API.getInstance().getHomeCards().then(data => {
+        this.setState(() => ({
+          listHomeCards: data.homecards.map((elem) => ({
+            adId: elem.adId, currencySymbol: elem.currencySymbol, pricePerMonth: elem.pricePerMonth
+            , title: elem.title, type: elem.type, photoUrls: elem.photoUrls.homecardHidpi, isFavorite: elem.isFavorite
+          })
+          )
+        }));
+      });
+    } catch (e) {
+      alert('Not able to make the request to spotaroom API: ' + e);
+    }
+  }
+  render() {
+    return (
+      <div className='App'>
+        <Header title={title}></Header>
+        <div>
+          <ListHomeCards listHomeCards={this.state.listHomeCards}></ListHomeCards>
+        </div>
+      </div>
+    )
+  }
+}

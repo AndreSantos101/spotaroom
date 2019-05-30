@@ -1,0 +1,9 @@
+
+.listHomeCards{
+    background-color: #FCD103;
+    position:fixed;
+    width:100%;
+    overflow:auto;
+    padding-bottom: 5rem;
+  }
+  

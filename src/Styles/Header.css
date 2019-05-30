@@ -1,0 +1,33 @@
+@media screen and (max-width: 600px) {
+  .dimensionalOptions {
+    display: none;
+  }
+}
+
+.dimensionalOptions {
+  float: right;
+  font-size: 10px;
+  line-height:3rem;
+}
+
+.fullLine{
+  padding: 1rem 2rem;
+  text-align: left;
+  background-color: #FCD103;
+  border-bottom-style: solid;
+  border-color: #146a20;
+}
+
+.title{
+  font-size: 25px;
+  color: #3D8F31;  
+  font-style: italic;
+}
+
+.option{
+  color: #D2D2D2;  
+}
+
+.option:hover{
+  color: #A2A2A2;  
+}

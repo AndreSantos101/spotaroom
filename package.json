@@ -2,10 +2,13 @@
   "name": "spotaroom",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://frontend-interview.spotahome.com",
   "dependencies": {
+    "@types/jest": "^24.0.13",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
+    "react-scripts": "3.0.1",
+    "sinon": "^7.3.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -27,5 +30,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.13.2"
   }
 }
