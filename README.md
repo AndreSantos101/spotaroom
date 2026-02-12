@@ -6,7 +6,7 @@ The mobile size was defined to - max-width: 600px
 
 ## Available Scripts
 
-### `npm install` - Obligatory!
+### `npm install`
 
 Install all the dependencies needed to execute the app.
 
